@@ -1,3 +1,3 @@
-[submodule "f5-xc-modules"]
-	path = f5-xc-modules
+[submodule "modules"]
+	path = modules
 	url = https://github.com/cklewar/f5-xc-modules

@@ -1,7 +1,7 @@
-name: Azure marketplace agreement module
+name: Azure virtual network module
 on: push
 jobs:
-  azure-marketplace-agreement-module-validate:
+  azure-virtual-network-module-validate:
     runs-on: ubuntu-latest
     steps:
       - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
@@ -46,9 +46,9 @@ jobs:
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
-  azure-marketplace-agreement-module-plan:
+  azure-virtual-network-module-plan:
     runs-on: ubuntu-latest
-    needs: [ azure-marketplace-agreement-module-validate ]
+    needs: [ azure-virtual-network-module-validate ]
     steps:
       - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub."
@@ -101,9 +101,9 @@ jobs:
         run: |
           rm main.tf
       - run: echo "This job's status is ${{ job.status }}."
-  azure-marketplace-agreement-module-apply:
+  azure-virtual-network-module-apply:
     runs-on: ubuntu-latest
-    needs: [ azure-marketplace-agreement-module-plan ]
+    needs: [ azure-virtual-network-module-plan ]
     steps:
       - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub."
@@ -168,9 +168,9 @@ jobs:
         run: |
           rm main.tf
       - run: echo "This job's status is ${{ job.status }}."
-  azure-marketplace-agreement-module-destroy:
+  azure-virtual-network-module-destroy:
     runs-on: ubuntu-latest
-    needs: [ azure-marketplace-agreement-module-apply ]
+    needs: [ azure-virtual-network-module-apply ]
     steps:
       - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub."
